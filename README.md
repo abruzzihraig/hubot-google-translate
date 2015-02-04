@@ -2,7 +2,17 @@
 
 Allows Hubot to know many languages using Google Translate
 
-See [`src/google-translate.coffee`](src/google-translate.coffee) for full documentation.
+See Origin document in [hubot-google-translate](https://github.com/abruzzihraig/hubot-google-translate)
+
+This fork is simplified translation between zh_CN and en.
+
+## Interaction
+```
+hubot z hello
+// 你好
+hubot e 你好
+// hello
+```
 
 ## Installation
 
@@ -16,13 +26,4 @@ Then add **hubot-google-translate** to your `external-scripts.json`:
 [
   "hubot-google-translate"
 ]
-```
-
-## Sample Interaction
-
-```
-user> hubot translate me bienvenu
-hubot> " bienvenu" is Turkish for " Bienvenu "
-user> hubot translate me from french into english bienvenu
-hubot> The French " bienvenu" translates as " Welcome " in English
 ```
