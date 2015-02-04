@@ -17,7 +17,7 @@ module.exports = (robot) ->
   robot.respond pattern, (msg) ->
     term   = String.prototype.trim.call(msg.match[2] || '')
     origin = 'auto'
-    target = msg.match[1] ? languages[msg.match[1]] : 'zh-CN'
+    target = if msg.match[1] then msg.match[1] else 'zh-CN'
 
     msg.http("https://translate.google.com/translate_a/t")
       .query({
