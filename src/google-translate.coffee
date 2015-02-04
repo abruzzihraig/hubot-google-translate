@@ -12,14 +12,11 @@ languages =
 module.exports = (robot) ->
   language_choices = Object.keys(languages).join('|')
   pattern = new RegExp('(e|z)(.*)', 'i')
-  console.log(languages)
 
   robot.respond pattern, (msg) ->
     term   = String.prototype.trim.call(msg.match[2] || '')
     origin = 'auto'
-    target = if msg.match[1] then msg.match[1] else 'zh-CN'
-    console.log(msg)
-    robot.logger.debug(msg)
+    target = if msg.match[1] then languages[msg.match[1]] else 'zh-CN'
 
     msg.http("https://translate.google.com/translate_a/t")
       .query({
